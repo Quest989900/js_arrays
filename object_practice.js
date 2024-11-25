@@ -71,7 +71,7 @@ const  setDiscount = (obj) => {
     return obj
 }
 
-console.log(setDiscount(products))
+// console.log(setDiscount(products))
 
 
 /*II. Write a second function to check if the product has 'discouted price' property. 
@@ -95,4 +95,4 @@ const confirmDiscount = (obj)=> {
     }
 }
 
-console.log(confirmDiscount(products))
+// console.log(confirmDiscount(products))

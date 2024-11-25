@@ -224,7 +224,7 @@ let plusOne = function(digits) {
     return output
 };
 
-// console.log(plusOne([6,1,4,5,3,9,0,1,9,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3,9]))
+console.log(plusOne([6,1,4,5,3,9,0,1,0,1,9,5,1,8,6,7,0,5,5,4,3]))
 
 
 // let obj3_ = {a:1, b:2, c:3, d:4, e:5, f:6,}
@@ -392,4 +392,43 @@ const  setDiscount = (obj) => {
     return obj
 }
 
-console.log(setDiscount(products))
+// console.log(setDiscount(products))
+
+const merge = function(nums1, m, nums2, n) {
+    //  for (i = 0; i < arr.length; i++)
+    //  for (i = arr.length-1; i > 0; i--)
+        for(i=m-1, j=n-1, k=m+n-1; j>=0; k--){
+        if(i >= 0 && nums1[i] > nums2[j]){
+            nums1[k] = nums1[i]
+            i--
+        }else {
+            nums1[k] = nums2[j]
+            j--
+        }
+        
+    }
+    return nums1
+// [1,2,3,0,0,0]   [2,5,6]
+
+
+
+
+
+
+    
+    
+    // let i = m - 1;
+    // let j = n - 1;
+    // let k = m + n - 1;
+    
+    // while (j >= 0) {
+    //     if (i >= 0 && nums1[i] > nums2[j]) {
+    //         nums1[k--] = nums1[i--];
+    //     } else {
+    //         nums1[k--] = nums2[j--];
+    //     }
+    // }
+
+};
+
+console.log(merge([1,2,3,0,0,0], 3, [2,5,6], 3))
