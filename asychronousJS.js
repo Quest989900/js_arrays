@@ -62,20 +62,22 @@ let outCome = fetch ("https://api.coindesk.com/v1/bpi/currentprice.json")
 
 
 
-let inCome = async ()=>{
+let inCome = async (res,rej)=>{
 try{
+    
     let result =await fetch ("https://api.coindesk.com/v1/bpi/currentprice.json")
     let answer =await result.json()
     let data = answer.bpi.USD.code
-    console.log(data)
+    return data
 }
 catch(err){
     console.log(err)
 }
 }
 
-inCome()
-
+(async () => {
+ console.log(await inCome())
+})()
 
 
 

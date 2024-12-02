@@ -1,8 +1,12 @@
 const amount = document.querySelector('#amount')
+// const amount = document.getElementById('amount')
 const currency = document.querySelector('#currency')
 const convertBtn = document.querySelector('#convert')
 const resetBtn = document.querySelector('#reset')
 // const result = document.querySelector('#result')
+
+
+
 
 
 const converter = async ()=> {
@@ -26,6 +30,8 @@ convertBtn.addEventListener('click', async(e) => {
     let output = await converter()
     document.querySelector('#result').innerText = output
     // document.querySelector('#result').innerHTML = '<h2>I am clicked</h2>'
+    let amountInNaira = parseInt(amount.value)
+    console.log(amountInNaira)
 
 })
 
