@@ -6,24 +6,29 @@
     <title>Document</title>    
     <!-- <script type="text/javascript" src="./index.js"></script> -->
     <link rel="stylesheet" href="./dom_.css">
-   
+   <!-- <script>
+         const myFunc =()=>console.log(`It's a click!!!!!!`)
+   </script> -->
 </head>
 <body>
     
+    <!-- <h1  onclick="myFunc()">Currency Converter</h1> -->
     <h1>Currency Converter</h1>
+    <!-- <h1>Currency deConverter</h1> -->
     <div id="flex-wrapper">
         <div id="input-side">
             <form action="">
-                <label for="amount">Amount in Naira</label>            
-                <input class="form-items" type="number" id="amount" value="" placeholder="Amount in Naira...">
-                <label for="currency" id="currency">Currency of Interest</label>
-                <input class="form-items" type="text" placeholder="Currency to convert to...">
+                <label for="amount">Amount to Convert</label>            
+                <input class="form-items" type="number" id="amount" value="" placeholder="Amount to convert...">
+                <label for="currency">Currency</label>
+                <input class="form-items" id="y-currency" type="text" placeholder="Your Currency...">
+                <input class="form-items" id="t-currency" type="text" placeholder="Target Currency...">
                 <input class="form-items" id='convert' type="submit" value="Convert">
                 <input class="form-items" id='reset' type="submit" value="Reset">
                 <!-- <button id="convert">Convert</button> -->
             </form>   
         </div>
-        <div id="output-side">
+        <div id="output-side">            
             <div id="result">0.00</div>            
         </div>
     </div>
