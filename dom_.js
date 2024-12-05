@@ -63,6 +63,8 @@ const resetButton = document.querySelector('#reset')
 const outputDisplay = document.querySelector('#output-side div')
 // const h1 = document.querySelector('h1')
 
+
+/*
 const currencyConverter = async(targetCurr, sourceCurr )=> {
     try {
         targetCurr = targetCurr.toUpperCase()
@@ -77,7 +79,8 @@ catch (err) {
     console.log('errooooor:',err)
 }
 }
-// https://data.fixer.io/api/latest ? access_key = API_KEY & base = USD
+
+
 
 convertButton.addEventListener('click', async(e)=> {
     e.preventDefault()
@@ -88,6 +91,40 @@ convertButton.addEventListener('click', async(e)=> {
     let exchange = amount/res
 
     outputDisplay.innerText = '€' + exchange
+})
+
+*/
+
+// https://data.fixer.io/api/latest?access_key=API_KEY&base=USD
+
+
+const currencyConverter = async()=> {
+    try {
+        // targetCurr = targetCurr.toUpperCase()
+        let url = 'https://data.fixer.io/api/latest?access_key=d4d0a18c50eee394baec75bf06d10199'
+        console.log(url)
+        let response = await fetch(url)
+        let data = await response.json()
+        // console.log(data.rates[currencyOfChoice].toFixed(2))
+        return data.rates
+}
+catch (err) {
+    console.log('errooooor:',err)
+}
+}
+
+
+convertButton.addEventListener('click', async(e)=> {
+    e.preventDefault()
+    let amount = Number(amountInput.value)
+    let currency = yourCurrency.value.toUpperCase()
+    let target = targetCurrency.value.toUpperCase()
+    let res = await currencyConverter()
+    let currencyEuroRate = res[currency]
+    let targetEuroRate = res[target]
+    let exchange = (amount * targetEuroRate) / currencyEuroRate
+
+    outputDisplay.innerText = target + ' ' + exchange.toFixed(2)
 
 
 })
@@ -99,6 +136,7 @@ convertButton.addEventListener('click', async(e)=> {
 10000 = 10000/1735
 
 */
+
 
 // currencyConverter('USD')
 
